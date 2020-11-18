@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Add VideoTransformDevice interface stub
 - Add a constructor argument to `DefaultDeviceController` to specify whether Web Audio should be
   supported. Use this instead of `enableWebAudio`.
 - Add an `AudioTransformDevice` type that can be supplied to `chooseAudioInputDevice`, allowing the

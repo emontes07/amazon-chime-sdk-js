@@ -222,6 +222,7 @@ import VideoTileController from './videotilecontroller/VideoTileController';
 import VideoTileControllerFacade from './videotilecontroller/VideoTileControllerFacade';
 import VideoTileFactory from './videotilefactory/VideoTileFactory';
 import VideoTileState from './videotile/VideoTileState';
+import VideoTransformDevice from './devicecontroller/VideoTransformDevice';
 import VideoUplinkBandwidthPolicy from './videouplinkbandwidthpolicy/VideoUplinkBandwidthPolicy';
 import VoiceFocusConfig from './voicefocus/VoiceFocusConfig';
 import VoiceFocusDeviceOptions from './voicefocus/VoiceFocusDeviceOptions';
@@ -461,6 +462,7 @@ export {
   VideoTileControllerFacade,
   VideoTileFactory,
   VideoTileState,
+  VideoTransformDevice,
   VideoUplinkBandwidthPolicy,
   VoiceFocusConfig,
   VoiceFocusDeviceOptions,

@@ -4,6 +4,7 @@
 import * as chai from 'chai';
 import * as sinon from 'sinon';
 
+import { Device, VideoTransformDevice } from '../../src';
 import NoOpAudioVideoController from '../../src/audiovideocontroller/NoOpAudioVideoController';
 import DeviceChangeObserver from '../../src/devicechangeobserver/DeviceChangeObserver';
 import AudioInputDevice from '../../src/devicecontroller/AudioInputDevice';
@@ -1033,6 +1034,27 @@ describe('DefaultDeviceController', () => {
         expect(e).to.be.instanceof(TypeError);
       }
       expect(handleEventSpy.called).to.be.true;
+    });
+
+    it('throws error when choosing VideoTransformDevice', async () => {
+      class NoOpVideoTransformDevice implements VideoTransformDevice {
+        stop(): Promise<void> {
+          throw new Error('Method not implemented.');
+        }
+        intrinsicDevice(): Promise<Device> {
+          throw new Error('Method not implemented.');
+        }
+        applyProcessors(_mediaStream?: MediaStream): Promise<MediaStream> {
+          throw new Error('Method not implemented.');
+        }
+        outputMediaStream: MediaStream;
+      }
+      const device = new NoOpVideoTransformDevice();
+
+      try {
+        await deviceController.chooseVideoInputDevice(device);
+        throw new Error('Not reachable');
+      } catch (error) {}
     });
   });
 
